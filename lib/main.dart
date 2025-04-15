@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:check_list/Pages/home_page.dart';
-void main(){
+import 'package:hive_flutter/hive_flutter.dart';
+void main() async{
+  //await for flutter to initialize the database
+  await Hive.initFlutter();
+  //call the box
+  var box= await Hive.openBox('database');
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget{
