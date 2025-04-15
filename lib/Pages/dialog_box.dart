@@ -13,41 +13,28 @@ class DialogBox extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
-    return Padding(
-        padding:EdgeInsets.all(10),
-      child: Container(
+    return AlertDialog(
+      content:Container(
         padding: EdgeInsets.all(10),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            TextField(
+        child: Column(children: [
+          TextField(
 
-              decoration:InputDecoration(
-                border:OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                )
+          ),
+          Row(children: [
+            Buttons(text:'Save', onPressed:onSave),
+            Buttons(text: 'Cancel', onPressed: onCancel)
 
-              ),
-
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Buttons(text: 'Save', onPressed:onSave),
-                Buttons(text: 'Cancel', onPressed: onCancel),
+          ],)
+        ],),
+      ) ,
 
 
-
-
-              ],
-            )
-
-          ],
-
-        ),
-      ),
     );
+
+
+
+
+
 
   }
 }

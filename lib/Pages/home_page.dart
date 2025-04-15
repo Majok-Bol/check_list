@@ -11,6 +11,10 @@ class HomePageState extends State<HomePage>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(title: Text('To do Application'),centerTitle: true,backgroundColor: Colors.grey.shade400,elevation: 0,),
+      body:ListView.builder(itemBuilder:(context,index){
+        
+      }),
+      floatingActionButton: FloatingActionButton(onPressed:(){},child: Icon(Icons.add),),
     );
   }
 }
