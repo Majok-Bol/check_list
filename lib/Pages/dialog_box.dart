@@ -14,14 +14,27 @@ class DialogBox extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return AlertDialog(
+      backgroundColor: Colors.blue.shade50,
       content:Container(
-        padding: EdgeInsets.all(10),
-        child: Column(children: [
+
+        height: 120,
+        padding: EdgeInsets.all( 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
           TextField(
+            controller: itemController,
+            decoration: InputDecoration(
+              hintText: 'Add new task',
+              border: OutlineInputBorder(),
+            ),
 
           ),
-          Row(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
             Buttons(text:'Save', onPressed:onSave),
+            SizedBox(width: 20,),
             Buttons(text: 'Cancel', onPressed: onCancel)
 
           ],)

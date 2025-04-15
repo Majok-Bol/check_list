@@ -19,13 +19,16 @@ class ToDoTile extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(top: 10),
         child:Slidable(
           endActionPane: ActionPane(motion:StretchMotion(), children:[
+            SlidableAction(onPressed:deleteFunction,icon: Icons.delete,backgroundColor: Colors.red,)
 
     ]),
     child: Container(
-    padding: EdgeInsets.all(10),
+      color: Colors.yellow.shade200,
+
+    padding: EdgeInsets.only(top: 10),
       child: Row(
         children: [
           Checkbox(value:taskCompleted, onChanged: onChanged),
